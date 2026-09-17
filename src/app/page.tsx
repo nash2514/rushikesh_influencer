@@ -393,27 +393,6 @@ function Programs() {
 function Footer() {
   return (
     <footer className="footer" id="join">
-      <Reveal className="footerLandscapeReveal">
-        <div className="footerLandscape">
-          <div className="landscapeImage" />
-          <div className="landscapeOverlay" />
-
-          <div className="landscapeContent">
-            <div className="footerMarathi">
-              <span>चांगला</span>
-              <span>माणूस बना.</span>
-              <i />
-            </div>
-
-            <div className="discipline">
-              <span>DISCIPLINE</span>
-              <span>BUILDS</span>
-              <span>FREEDOM</span>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-
       <div className="footerInner">
         <Reveal className="joinContent">
           <div className="sectionEyebrow">START TODAY</div>
@@ -602,6 +581,18 @@ export default function Page() {
                 transform: none;
               }
 
+              /* Desktop only: reduce the main hero headline substantially. */
+              .heroTextContent h1 {
+                transform: scale(0.62);
+                transform-origin: top left;
+                margin-bottom: -70px !important;
+              }
+
+              /* Pull the orange divider closer to the scaled headline. */
+              .heroTextContent .orangeLine {
+                margin-top: 0 !important;
+              }
+
               /* Desktop only: move the slogan much farther left. */
               .slogan {
                 position: relative;
@@ -619,6 +610,39 @@ export default function Page() {
             /* Mobile: keep the existing image size/placement and bring all
                hero copy upward so it slightly overlaps the image. */
             @media (max-width: 768px) {
+              .hero,
+              .heroInner,
+              .heroVisual,
+              .heroPhoto {
+                overflow: visible !important;
+              }
+
+              .heroVisual {
+                position: relative;
+                left: 88px;
+                top: 50px;
+                width: 125%;
+                margin-left: -12.5%;
+              }
+
+              .heroPhoto {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                background: transparent !important;
+                overflow: visible !important;
+              }
+
+              .heroPhoto img {
+                width: 125% !important;
+                max-width: none !important;
+                height: auto !important;
+                object-fit: contain !important;
+                object-position: center top !important;
+                background: transparent !important;
+                display: block;
+              }
+
               .heroCopy {
                 position: relative;
                 z-index: 3;
