@@ -573,7 +573,7 @@ export default function Page() {
                 object-position: center center !important;
                 background: transparent !important;
                 position: relative;
-                top: 150px;
+                top: 130px;
                 box-shadow: none !important;
                 border: 0 !important;
                 filter: none !important;
@@ -586,6 +586,34 @@ export default function Page() {
                 display: none !important;
                 background: transparent !important;
               }
+
+              /* Desktop only: shift the left hero copy right by 30px
+                 and make the complete content substantially smaller. */
+              .heroCopy {
+                position: relative;
+                left: 140px;
+                transform: scale(0.45);
+                transform-origin: top left;
+                width: max-content;
+                max-width: 100%;
+              }
+
+              .heroTextContent {
+                transform: none;
+              }
+
+              /* Desktop only: move the slogan much farther left. */
+              .slogan {
+                position: relative;
+                left: -140px;
+              }
+            }
+
+            /* Move the hero slogan 50px left without changing the
+               rest of the hero layout. */
+            .slogan {
+              position: relative;
+              left: -50px;
             }
 
             /* Mobile: keep the existing image size/placement and bring all
